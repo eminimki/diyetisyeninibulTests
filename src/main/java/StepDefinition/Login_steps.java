@@ -18,7 +18,7 @@ public class Login_steps {
         driver= Driver.getDriver();
         driver.manage().window().maximize();
         driver.get("http://localhost:8080/login");
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
     @Given("type email {string}")
     public void type_e_mail(String emailText) {
@@ -61,7 +61,7 @@ public class Login_steps {
 
     @Then("check login status with url {string} and expected {string}")
     public void check_login_status(String expectedURL, String expected) {
-        loginPage.checkExpextedStatus(loginPage.checkURL(expectedURL),expected);
+        loginPage.checkExpectedStatus(loginPage.checkURL(expectedURL),expected);
     }
 
 }

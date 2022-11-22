@@ -12,6 +12,6 @@ Feature: 1-Sipariş alındı bilgisi müşteri kayıt veya giriş yaptıktan son
     And choose a dietician
     And choose a meal
     When confirm meal
-    Then check order information url "http://localhost:8080/confirm/" and expected "TEST PASSED"
+    Then check order information message "Siparişiniz alındı!"
     
 

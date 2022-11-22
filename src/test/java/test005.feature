@@ -1,18 +1,20 @@
-Feature: 7-Kart Numarası 16 rakamdan oluşur. Fazla rakam girilemez.
-  Scenario Outline: Credit Card number has 16 int. is not less than or higher
+Feature: 5- CVV 4 rakamlıdır. Harf girilemez.
+  Scenario Outline: CVV has 4 number is not char
     Given open login page
     And type email "emin@eminimki.com"
     And type password with valid password "123456"
     And type password confirm "123456"
-    And type credit card "<Credit Card Number>" info
+    And type credit card "1234567890123456" info
     And type SKT "1125"
-    And type CVV "123"
     And type adress "cok uzun bir adres girilmesi gerek min 20"
+    And type CVV "<CVV>"
     When click on submit button
     Then check login status with url "http://localhost:8080/select" and expected "<expected>"
     Examples:
-      | Credit Card Number | expected |
-      | 123456789012345 |TEST FAILED|
-      | 1234567890123456 |TEST PASSED|
-      | 12345678901234567 |TEST FAILED|
-
+        | CVV | expected |
+        |1    | FAILED|
+        |12   | FAILED|
+        |123  | FAILED|
+        |1234 | PASSED|
+        |12345| FAILED|
+        |123A | FAILED|

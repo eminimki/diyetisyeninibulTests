@@ -1,6 +1,7 @@
 package Pages;
 
 import Utilities.Driver;
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -12,7 +13,7 @@ import java.time.Duration;
 
 public abstract class AbstractClass {
     private WebDriver driver = Driver.getDriver();
-    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
     public void clickMethod(WebElement clickElement){
         wait.until(ExpectedConditions.elementToBeClickable(clickElement));
@@ -35,26 +36,38 @@ public abstract class AbstractClass {
     public String checkURL(String expected){
         if (expected.equals(driver.getCurrentUrl())){
             waitASecond();
-            return "TEST PASSED";
+            return "PASSED";
         }else {
             waitASecond();
-            return "TEST FAILED";
+            return "FAILED";
         }
 
     }
     public void waitASecond(){
         try {
-            Thread.sleep(1000); // sleep/stop a thread for 1 second
+            Thread.sleep(250); // sleep/stop a thread for 1 second
         } catch(InterruptedException e) {
             System.out.println("An Excetion occured: " + e);
         }
     }
 
-    public void checkExpextedStatus(String expected, String actual){
+    public void checkExpectedStatus(String expected, String actual){
         if (expected.equals(actual)){
             System.out.println("TEST PASSED");
         }else{
             System.out.println("TEST FAILED");
         }
+        Driver.closeDriver();
+    }
+
+    public void Assertion(WebElement actual, String expected){
+        wait.until(ExpectedConditions.visibilityOf(actual));
+        Assert.assertEquals(actual.getText(),expected);
+        System.out.println("TEST PASSED");
+    }
+
+    public boolean checkSeeElement(WebElement webElement){
+        wait.until(ExpectedConditions.visibilityOf(webElement));
+        return true;
     }
 }

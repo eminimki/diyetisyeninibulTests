@@ -14,7 +14,6 @@ public class LoginPage extends AbstractClass{
     }
     @FindBy(id = "email")
     private WebElement emailTextArea;
-
     public void emailSendKeys(String emailText){
         sendKeysMethod(emailTextArea,emailText);
     }
@@ -61,7 +60,7 @@ public class LoginPage extends AbstractClass{
         clickMethod(submitButton);
     }
 
-    @FindBy(id = "adminbutton")
+    @FindBy(id = "admin")
     private WebElement adminButton;
     public void clickOnAdminButton(){
         clickMethod(adminButton);

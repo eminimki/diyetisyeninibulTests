@@ -19,7 +19,7 @@ public class MealsPage extends AbstractClass {
         clickMethod(lunchCheckbox);
     }
 
-    @FindBy(id = "sec")
+    @FindBy(id = "select")
     private WebElement confirmMealsButton;
     public void clickOnConfirmMealsButton(){
         clickMethod(confirmMealsButton);
