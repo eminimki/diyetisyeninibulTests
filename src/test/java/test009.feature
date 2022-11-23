@@ -1,3 +1,4 @@
+@RegressionTest
 Feature:9-Şifre ve şifre tekrar kısmında şifreler eşleşmelidir. Eşleşmiyorsa giriş başarısız olur.
   Scenario Outline: succesfully login with valid confirm and fail login with invalid confirm
     Given open login page

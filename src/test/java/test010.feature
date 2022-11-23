@@ -1,3 +1,4 @@
+@RegressionTest
 Feature: 10-Şifre en az 6 karakterden oluşmalıdır.
   Scenario Outline: password has min 6 characters
     Given open login page

@@ -1,3 +1,4 @@
+@RegressionTest
 Feature: 14-Adres bölümü en az 20 karakter içermelidir.
   Scenario Outline: address has least 20 characters.
     Given open login page

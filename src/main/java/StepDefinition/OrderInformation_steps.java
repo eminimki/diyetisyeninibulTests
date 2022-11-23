@@ -27,6 +27,27 @@ public class OrderInformation_steps {
     @Then("check order information message {string}")
     public void check_order_information_url(String expected) {
         confirmPage.checkOrderconfirmMessage(expected);
+        System.out.println("TEST PASSED");
         Driver.closeDriver();
     }
+
+    @When("check order information message {string} in complete test")
+    public void check_order_information_message(String expected) {
+        confirmPage.checkOrderconfirmMessage(expected);
+    }
+
+    @Then("check order completed message {string}")
+    public void check_order_completed_message(String completedVerifyMessage) {
+        confirmPage.checkOrderCompleteMessage(completedVerifyMessage);
+    }
+    @Then("click on next button in completed page")
+    public void click_on_next_button_in_completed_page() {
+        confirmPage.clickOnOrderCompleteNextButton();
+    }
+    @Then("check navigate to select dietician menu page with url {string} expected {string}")
+    public void check_navigate_to_select_dietician_menu_page_with_url(String selectPageUrl, String expected) {
+        confirmPage.checkExpectedStatus(confirmPage.checkURL(selectPageUrl),expected);
+        Driver.closeDriver();
+    }
+
 }

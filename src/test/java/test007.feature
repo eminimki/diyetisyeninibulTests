@@ -1,3 +1,4 @@
+@RegressionTest
 Feature: 7-Kart Numarası 16 rakamdan oluşur. Fazla rakam girilemez.
   Scenario Outline: Credit Card number has 16 int. is not less than or higher
     Given open login page

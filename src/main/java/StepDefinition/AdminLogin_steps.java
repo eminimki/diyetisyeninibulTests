@@ -16,5 +16,6 @@ public class AdminLogin_steps {
     @Then("check admin see dietician")
     public void check_admin_panel() {
         adminPage.checkAdminSeeDieticianTable();
+        Driver.closeDriver();
     }
 }

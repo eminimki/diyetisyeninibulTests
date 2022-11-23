@@ -6,9 +6,9 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/java"
+        tags = "@SmokeTest"
+        ,features = "src/test/java"
         ,glue={"StepDefinition"}
 )
-
-public class RunnerForAll {
+public class RunnerForSmokeTests {
 }

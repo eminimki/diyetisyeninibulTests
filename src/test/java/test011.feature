@@ -1,3 +1,4 @@
+@RegressionTest
 Feature: 11-SKT geçmiş bir tarih gösteremez.
   Scenario Outline: SKT cannot show a past date.
     Given open login page

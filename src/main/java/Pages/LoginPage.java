@@ -66,8 +66,13 @@ public class LoginPage extends AbstractClass{
         clickMethod(adminButton);
     }
 
-    public void checkURLVerify(String expected){
-        System.out.println(checkURL(expected));
+    @FindBy(id = "diyetisyen")
+    private WebElement dieticianButton;
+    public void clickOnDieticianButton(){
+        clickMethod(dieticianButton);
+    }
+
+    public void checkURLVerify(String expected){ System.out.println(checkURL(expected));
     }
 
 }

@@ -1,3 +1,4 @@
+@RegressionTest
 Feature: 5- CVV 4 rakamlıdır. Harf girilemez.
   Scenario Outline: CVV has 4 number is not char
     Given open login page

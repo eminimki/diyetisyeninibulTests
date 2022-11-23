@@ -19,6 +19,19 @@ public class AdminPage extends AbstractClass{
         if (checkSeeElement(dieticianTable)){
             System.out.println("TEST PASSED");
         }else{System.out.println("TEST FAILED");}
-
     }
+
+    @FindBy(xpath = "/html/body/div/div/div/a")
+    private WebElement addDieticianButton;
+    public void clickOnAddDieticianButton(){
+        clickMethod(addDieticianButton);
+    }
+
+    @FindBy(id = "edit")
+    private WebElement dieticianEditButtonInAdminPage;
+    public void clickOnDieticianEditButtonInAdminPage(){
+        clickMethod(dieticianEditButtonInAdminPage);
+    }
+
+
 }

@@ -1,3 +1,4 @@
+@RegressionTest
 Feature: 1-Sipariş alındı bilgisi müşteri kayıt veya giriş yaptıktan sonra ekrana 3 saniyeliğine gelir.
   Scenario: After registration, the customer chooses a meal and receives the order receipt.
     Given open login page

@@ -18,34 +18,34 @@ public abstract class AbstractClass {
     public void clickMethod(WebElement clickElement){
         wait.until(ExpectedConditions.elementToBeClickable(clickElement));
         clickElement.click();
-        waitASecond();
+        waitASome(250);
 
     }
 
     public void sendKeysMethod(WebElement sendKeysElement, String text){
         wait.until(ExpectedConditions.visibilityOf(sendKeysElement));
         sendKeysElement.sendKeys(text);
-        waitASecond();
+        waitASome(250);
     }
 
     public void selectElementFromDropdownMenu(WebElement dropdownMenu , String select ){
         Select slc = new Select(dropdownMenu);
         slc.selectByVisibleText(select);
-        waitASecond();
+        waitASome(250);
     }
-    public String checkURL(String expected){
-        if (expected.equals(driver.getCurrentUrl())){
-            waitASecond();
+    public String checkURL(String expectedURL){
+        if (expectedURL.equals(driver.getCurrentUrl())){
+            waitASome(250);
             return "PASSED";
         }else {
-            waitASecond();
+            waitASome(1000);
             return "FAILED";
         }
 
     }
-    public void waitASecond(){
+    public void waitASome(int time){
         try {
-            Thread.sleep(250); // sleep/stop a thread for 1 second
+            Thread.sleep(time); // sleep/stop a thread for 1 second
         } catch(InterruptedException e) {
             System.out.println("An Excetion occured: " + e);
         }
@@ -63,11 +63,16 @@ public abstract class AbstractClass {
     public void Assertion(WebElement actual, String expected){
         wait.until(ExpectedConditions.visibilityOf(actual));
         Assert.assertEquals(actual.getText(),expected);
-        System.out.println("TEST PASSED");
+        waitASome(250);
     }
 
     public boolean checkSeeElement(WebElement webElement){
         wait.until(ExpectedConditions.visibilityOf(webElement));
         return true;
+    }
+
+    public void clearInsideTextArea(WebElement webElement){
+        webElement.clear();
+        waitASome(250);
     }
 }

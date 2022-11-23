@@ -1,3 +1,4 @@
+@RegressionTest
 Feature: SKT ay/yıl olmak üzere 2/2 sayı girilebilir.
   Scenario Outline: 2/2 numbers can be entered as SKT month/year
     Given open login page

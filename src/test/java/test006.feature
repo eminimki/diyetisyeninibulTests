@@ -1,3 +1,4 @@
+@RegressionTest
 Feature: 6-E-mail en fazla 30 karakterden oluşmalıdır.
   Scenario Outline: email has max 30 char
     Given open login page
