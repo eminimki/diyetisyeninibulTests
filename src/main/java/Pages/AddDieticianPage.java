@@ -49,4 +49,10 @@ public class AddDieticianPage extends AbstractClass{
     public void checkAddDieticianConfirmMessage(String addDieticianConfirmMessage){
         Assertion(addDieticianConfirmMessageTextArea,addDieticianConfirmMessage);
     }
+
+    @FindBy(name = "image")
+    private WebElement addDieticianPhotoUploadArea;
+    public void uploadDieticianPhoto(String dieticianPhotoPath){
+        uploadFile(addDieticianPhotoUploadArea,dieticianPhotoPath);
+    }
 }

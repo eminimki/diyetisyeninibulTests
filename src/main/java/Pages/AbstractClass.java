@@ -27,7 +27,7 @@ public abstract class AbstractClass {
         sendKeysElement.sendKeys(text);
         waitASome(250);
     }
-
+/* dropdownmenu */
     public void selectElementFromDropdownMenu(WebElement dropdownMenu , String select ){
         Select slc = new Select(dropdownMenu);
         slc.selectByVisibleText(select);
@@ -75,4 +75,10 @@ public abstract class AbstractClass {
         webElement.clear();
         waitASome(250);
     }
+
+    public void uploadFile(WebElement webElement, String filePath){
+        webElement.sendKeys(filePath);
+        waitASome(250);
+    }
+
 }

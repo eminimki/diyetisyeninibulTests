@@ -4,6 +4,7 @@ import Pages.DieticianLoginPage;
 import Pages.EditMealsPage;
 import Pages.LoginPage;
 import Utilities.Driver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -55,5 +56,20 @@ public class DieticianEditMeals_steps {
     public void check_confirm_message(String confirmMessage) {
         editMealsPage.checkConfirmMessage(confirmMessage);
         Driver.closeDriver();
+    }
+
+    @And("upload breakfast photo {string}")
+    public void uploadBreakfastPhoto(String breakfastPhotoPath) {
+        editMealsPage.uploadBreakfastPhoto(breakfastPhotoPath);
+    }
+
+    @And("upload lunch photo {string}")
+    public void uploadLunchPhoto(String lunchPhotoPath) {
+        editMealsPage.uploadLunchPhoto(lunchPhotoPath);
+    }
+
+    @And("upload dinner photo {string}")
+    public void uploadDinnerPhoto(String dinnerPhotoPath) {
+        editMealsPage.uploadDinnerPhoto(dinnerPhotoPath);
     }
 }

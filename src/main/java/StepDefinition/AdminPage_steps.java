@@ -5,6 +5,7 @@ import Pages.AdminPage;
 import Pages.EditDieticianPage;
 import Pages.EditMealsPage;
 import Utilities.Driver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -97,6 +98,8 @@ public class AdminPage_steps {
     }
 
 
-
-
+    @And("upload dietician photo {string}")
+    public void uploadDieticianPhoto(String dieticianPhotoPath) {
+        addDieticianPage.uploadDieticianPhoto(dieticianPhotoPath);
+    }
 }

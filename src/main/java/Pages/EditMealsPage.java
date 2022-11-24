@@ -46,4 +46,22 @@ public class EditMealsPage extends AbstractClass{
         Assertion(confirmMessageTextArea,expectedConfirmMessage);
     }
 
+    @FindBy(name = "breakfastPhoto")
+    private WebElement breakfastPhotoArea;
+    public void uploadBreakfastPhoto(String breakfastPhotoPath){
+        uploadFile(breakfastPhotoArea,breakfastPhotoPath);
+    }
+
+    @FindBy(name = "lunchPhoto")
+    private WebElement lunchPhotoArea;
+    public void uploadLunchPhoto(String lunchPhotoPath){
+        uploadFile(lunchPhotoArea,lunchPhotoPath);
+    }
+
+    @FindBy(name = "dinnerPhoto")
+    private WebElement dinnerPhotoArea;
+    public void uploadDinnerPhoto(String dinnerPhotoPath){
+        uploadFile(dinnerPhotoArea,dinnerPhotoPath);
+    }
+
 }

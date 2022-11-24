@@ -45,7 +45,7 @@ public class ConfirmPage extends AbstractClass{
         clickMethod(ratingSaveButton);
     }
 
-    @FindBy(xpath = "/html/body/div/div/div/table/tbody/tr[1]/td[4]")
+    @FindBy(xpath = "/html/body/div/div/div/table/tbody/tr[1]/td[5]")
     private WebElement awerageRatingTextArea;
     public void checkAwerageRating(String expectedRating){
         Assertion(awerageRatingTextArea,expectedRating);

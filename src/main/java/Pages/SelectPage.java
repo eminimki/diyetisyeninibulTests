@@ -13,7 +13,7 @@ public class SelectPage extends AbstractClass{
         PageFactory.initElements(driver,this);
     }
 
-    @FindBy(id = "select")
+    @FindBy(xpath = "//*[@href='/view_meals/1']")
     private WebElement firstDieticianButton;
     public void clickOnFirstDieticianButton(){
         clickMethod(firstDieticianButton);
