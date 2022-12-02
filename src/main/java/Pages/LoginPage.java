@@ -75,4 +75,5 @@ public class LoginPage extends AbstractClass{
     public void checkURLVerify(String expected){ System.out.println(checkURL(expected));
     }
 
+
 }
